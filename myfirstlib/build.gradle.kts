@@ -47,9 +47,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-
-    api("androidx.compose.material:material:${Versions.compose}")
-    api("androidx.compose.ui:ui-tooling:${Versions.compose}")
-    api("androidx.constraintlayout:constraintlayout-compose:1.0.0")
-    api("io.coil-kt:coil-compose:1.4.0")
 }
+
+apply(from = "${project.rootDir}/buildSrc/src/main/kotlin/TransitiveDeps.gradle")
