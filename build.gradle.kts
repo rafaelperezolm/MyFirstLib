@@ -9,3 +9,5 @@ plugins {
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
+
+apply(from = "${project.rootDir}/buildSrc/src/main/kotlin/Publish.gradle")
