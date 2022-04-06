@@ -12,7 +12,7 @@ task clean(type: Delete) {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        maven(MavenPublication) {
             groupId = 'org.gradle.sample'
             artifactId = 'library'
             version = '1.1'
