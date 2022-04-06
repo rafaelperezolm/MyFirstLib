@@ -48,8 +48,8 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-    api(Dependencies.Libraries.Compose.material)
-    api(Dependencies.Libraries.Compose.uiTooling)
-    api(Dependencies.Libraries.Compose.constraintlayout)
-    api(Dependencies.Libraries.Compose.coil)
+    api("androidx.compose.material:material:${Versions.compose}")
+    api("androidx.compose.ui:ui-tooling:${Versions.compose}")
+    api("androidx.constraintlayout:constraintlayout-compose:1.0.0")
+    api("io.coil-kt:coil-compose:1.4.0")
 }
