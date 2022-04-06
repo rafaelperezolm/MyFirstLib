@@ -6,29 +6,18 @@ plugins {
     `maven-publish`
 }
 
+tasks.register("clean", Delete::class) {
+    delete(rootProject.buildDir)
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "com.rafaelperezolm"
             artifactId = "myfirstlib"
             version = "1.0.21"
-
-            artifact("$buildDir/outputs/aar/${artifactId}-release.aar")
-
-            pom {
-                withXml {
-                    val dependenciesNode = asNode().appendNode("dependencies")
-                    configurations.getByName("implementation") {
-                        dependencies.forEach {
-                            val dependencyNode = dependenciesNode.appendNode("dependency")
-                            dependencyNode.appendNode("groupId", it.group)
-                            dependencyNode.appendNode("artifactId", it.name)
-                            dependencyNode.appendNode("version", it.version)
-                        }
-                    }
-                }
-            }
+            //artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+            //artifact(file("$buildDir/some-${version}.jar"))
         }
     }
 }
-
